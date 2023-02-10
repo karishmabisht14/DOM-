@@ -31,11 +31,9 @@ myForm.addEventListener('submit', (e) => {
 
     }
     else{
-        const li = document.createElement('li');
-        li.appendChild(document.createTextNode(`${nameInput.value}: ${emailInput.value}`));
-
-        userList.appendChild(li);
-
+        //storing localy to the browser
+        localStorage.setItem("userName" , nameInput.value);
+        localStorage.setItem("userEmail", emailInput.value);
         //Clear Fields
         nameInput.value = '';
         emailInput.value = '';
