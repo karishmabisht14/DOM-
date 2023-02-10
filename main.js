@@ -31,9 +31,19 @@ myForm.addEventListener('submit', (e) => {
 
     }
     else{
-        //storing localy to the browser
-        localStorage.setItem("userName" , nameInput.value);
-        localStorage.setItem("userEmail", emailInput.value);
+
+        //create object
+        let userDetails = {
+            name: nameInput.value,
+            email: emailInput.value
+        };
+
+        //convert the object into JSON format
+        let userDetailsJson = JSON.stringify(userDetails);
+
+        //store object in local storage
+        localStorage.setItem("userDetails", userDetailsJson);
+        
         //Clear Fields
         nameInput.value = '';
         emailInput.value = '';
